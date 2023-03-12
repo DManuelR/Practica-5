@@ -63,4 +63,11 @@ tabla_resumen <- function(x) {
 }
 tabla_resumen(numArtefactos_int)
 
+install.packages("e1071")
+library(e1071)
+skewness(vector3) #El resultado indica que hay una ligera asimetría positiva en los datos.Una distribucion simetrica daria lugar si el coeficiente fuera 0. El signo del coeficiente de asimetria indica la direccion de la asimetria. Si es negativo indica que la cola de la distribucion se extiende hacia la izquierda, lo que significa que hay valores extremos en la parte inferior de la distribucion. Si es positivo indica que la cola de la distribucion se extiende hacia la derecha, lo que significa que hay valores extremos en la parte superior de la distribucion.(Ej: -0.3232, 0, 0.3123) 
 
+install.packages("moments")
+library(moments)
+kurtosis(vector3)
+#tiene una curtosis puntiaguda (distribucion leptocurtica). Tiene una mayor proporcion de valores extremos en comparacion con una distribucion normal. En otras palabras, la distribucion tiene valores que se agrupan en torno a la media y una mayor frecuencia de valores extremos en comparación con una distribucion normal. Puede tener un pico alto y delgado en su forma, lo que indica que los datos se agrupan en una estrecha gama de valores.
