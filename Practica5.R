@@ -54,4 +54,13 @@ coef_var <- function(x) {
 coef_var(numArtefactos_int)
 coef_var(vector3)
 
+library(psych)
+tabla_resumen <- function(x) {
+  resumen <- describe(x)
+  resumen_seleccionado <- cbind(resumen$mean, resumen$sd, resumen$min, resumen$max, resumen$median, resumen$range, IQR(x), coef_var(x))
+  colnames(resumen_seleccionado) <- c("Media", "SD", "Min", "Max", "Mediana", "Rango", "Rango Intercuartil", "Coeficiente Variacion")
+  return(resumen_seleccionado)
+}
+tabla_resumen(numArtefactos_int)
+
 
