@@ -47,7 +47,11 @@ cv1 <- sd(numArtefactos_int)/mean(numArtefactos_int) * 100
 cv1
 cv2 <- sd(vector3)/mean(vector3) * 100
 cv2
-install.packages("descr")
-library(descr)
-cv1_2 <- cv(numArtefactos_int)
+coef_var <- function(x) {
+  cv <- sd(x) / mean(x) * 100
+  return(cv)
+}
+coef_var(numArtefactos_int)
+coef_var(vector3)
+
 
