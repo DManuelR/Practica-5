@@ -36,10 +36,18 @@ desviacion_estandar
 desviacion_estandar2 <- sqrt(sum((numArtefactos_int - mean(numArtefactos_int))^2)/(length(numArtefactos_int) - 1))
 desviacion_estandar2
 
-#11, ...
+#11, la principal diferencia entre la desviación estándar y la varianza es que la desviación estándar se expresa en las mismas unidades que los datos originales, mientras que la varianza se expresa en unidades cuadradas. La desviación estándar es una medida más intuitiva de la dispersión y es más comúnmente utilizada en la práctica.
 
 library(ggplot2)
+boxplot(numArtefactos_int, horizontal = TRUE)
 
-Grafica_dispersion <- plot(numArtefactos_int, y=rep(0, length(numArtefactos_int)), pch=19, xlim=c(min(numArtefactos_int) - 1, max(numArtefactos_int) + 1), xlab="Valor", main="Dispersión de numArtefactos_int")
-abline(v=mean(numArtefactos_int), col="red", lty=2)
+vector3 <- c(21, 45, 33, 98, 34, 90, 67, 87, 45, 11, 73, 38, 28, 15, 50, 57, 12, 87, 29, 1)
+
+cv1 <- sd(numArtefactos_int)/mean(numArtefactos_int) * 100
+cv1
+cv2 <- sd(vector3)/mean(vector3) * 100
+cv2
+install.packages("descr")
+library(descr)
+cv1_2 <- cv(numArtefactos_int)
 
