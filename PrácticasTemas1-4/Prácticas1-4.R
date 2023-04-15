@@ -148,13 +148,13 @@ pdf <- dnorm(x, mean = media, sd = sd)
 curve(dnorm(x, mean = mean(spearheads_2$Peso), sd = sd(spearheads_2$Peso)), add = TRUE, col = "red", lwd = 2)
 
 ##Ej 14.
-boxplot(spearheads_2$Longitud_max, spearheads_2$Longitud_encaje, spearheads_2$Ancho_max, spearheads_2$Ancho_encaje, spearheads_2$Maximo_encaje, spearheads_2$Ancho_max_encaje, spearheads_2$Peso, main = "Gráfico de caja y bigote de las variables cuantitativas",
+boxplot(spearheads$Longitud_max, spearheads$Longitud_encaje, spearheads$Ancho_max, spearheads$Ancho_encaje, spearheads$Maximo_encaje, spearheads$Ancho_max_encaje, spearheads$Peso, main = "Gráfico de caja y bigote de las variables cuantitativas",
         xlab = "Variables", ylab = "Valores")
 
 ##Ej 15.
 library(reshape2)
 library(ggplot2)
-spearheads_cuantitativo <- data.frame(spearheads_2$Longitud_max, spearheads_2$Longitud_encaje, spearheads_2$Ancho_max, spearheads_2$Ancho_encaje, spearheads_2$Maximo_encaje, spearheads_2$Ancho_max_encaje, spearheads_2$Peso)
+spearheads_cuantitativo <- data.frame(spearheads$Longitud_max, spearheads$Longitud_encaje, spearheads$Ancho_max, spearheads$Ancho_encaje, spearheads$Maximo_encaje, spearheads$Ancho_max_encaje, spearheads$Peso)
 
 datos_largos <- reshape2::melt(spearheads_cuantitativo)
 
